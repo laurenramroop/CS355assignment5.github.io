@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Navigator Information</title>
+</head>
+<body>
+
+<!-- Title -->
+<h1>Navigator Page Information</h1>
+
+<!-- Content -->
+<div id="content">
+    <p>Navigator Name: <span id="navigatorName"></span></p>
+    <p>Navigator Product: <span id="navigatorProduct"></span></p>
+    <p>Navigator App Version: <span id="navigatorAppVersion"></span></p>
+    <p>Navigator User Agent: <span id="navigatorUserAgent"></span></p>
+    <p>Navigator Platform: <span id="navigatorPlatform"></span></p>
+    <p>Navigator Language: <span id="navigatorLanguage"></span></p>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Call the navigatorFunction to populate the information
+    function navigatorFunction() {
+        // Gather navigator information
+        var navigatorName = navigator.appName;
+        var navigatorProduct = navigator.product;
+        var navigatorAppVersion = navigator.appVersion;
+        var navigatorUserAgent = navigator.userAgent;
+        var navigatorPlatform = navigator.platform;
+        var navigatorLanguage = navigator.language;
+
+        // Update the content on the page
+        document.getElementById('navigatorName').textContent = navigatorName;
+        document.getElementById('navigatorProduct').textContent = navigatorProduct;
+        document.getElementById('navigatorAppVersion').textContent = navigatorAppVersion;
+        document.getElementById('navigatorUserAgent').textContent = navigatorUserAgent;
+        document.getElementById('navigatorPlatform').textContent = navigatorPlatform;
+        document.getElementById('navigatorLanguage').textContent = navigatorLanguage;
+    }
+
+    // Execute the function when the DOM is loaded
+    document.addEventListener('DOMContentLoaded', navigatorFunction);
+</script>
+
+</body>
+</html>

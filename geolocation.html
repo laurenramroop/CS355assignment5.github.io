@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Geolocation Information</title>
+</head>
+<body>
+
+<!-- Title -->
+<h1>Geolocation Page Information</h1>
+
+<!-- Content -->
+<div id="content">
+    <p>Geolocation Latitude: <span id="geoLatitude"></span></p>
+    <p>Geolocation Longitude: <span id="geoLongitude"></span></p>
+    <button onclick="requestGeolocationPermission()">Get Geolocation</button>
+</div>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to display Geolocation information
+        window.geolocationFunction = function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (position) {
+                        document.getElementById('geoLatitude').innerText = position.coords.latitude;
+                        document.getElementById('geoLongitude').innerText = position.coords.longitude;
+                    },
+                    function (error) {
+                        console.error('Error getting geolocation:', error.message);
+                    }
+                );
+            } else {
+                console.error('Geolocation is not supported by this browser.');
+            }
+        };
+
+        // Function to actively update geolocation information
+        function requestGeolocationPermission() {
+            window.geolocationFunction();
+        }
+    });
+</script>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Location Information</title>
+</head>
+<body>
+
+<!-- Title -->
+<h1>Location Page Information</h1>
+
+<!-- Content -->
+<div id="content">
+    <p>Location.href: <span id="locationHref"></span></p>
+    <p>Location.hostname: <span id="locationHostname"></span></p>
+    <p>Location.pathname: <span id="locationPathname"></span></p>
+    <p>Location.protocol: <span id="locationProtocol"></span></p>
+    <!-- Add other location information elements here -->
+</div>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to display Location information
+        window.locationFunction = function () {
+            document.getElementById('locationHref').innerText = window.location.href;
+            document.getElementById('locationHostname').innerText = window.location.hostname;
+            document.getElementById('locationPathname').innerText = window.location.pathname;
+            document.getElementById('locationProtocol').innerText = window.location.protocol;
+            // Add other location information updates here
+        };
+
+        // Call the locationFunction to populate the information
+        window.locationFunction();
+
+        // Add an event listener to update information on location changes
+        window.addEventListener('hashchange', function () {
+            window.locationFunction();
+        });
+    });
+</script>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Screen Information</title>
+</head>
+<body>
+
+<!-- Title -->
+<h1>Screen Page Information</h1>
+
+<!-- Content -->
+<div id="content">
+    <p>Screen.width: <span id="screenWidth"></span></p>
+    <p>Screen.height: <span id="screenHeight"></span></p>
+    <p>Screen.availWidth: <span id="availScreenWidth"></span></p>
+    <p>Screen.availHeight: <span id="availScreenHeight"></span></p>
+    <p>Screen.colorDepth: <span id="screenColorDepth"></span></p>
+    <p>Screen.pixelDepth: <span id="screenPixelDepth"></span></p>
+</div>
+
+<!-- JavaScript -->
+<script src="app.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Call the screenFunction to populate the information
+        window.screenFunction();
+    });
+</script>
+
+
+</body>
+</html>

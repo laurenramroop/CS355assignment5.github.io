@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Window Information</title>
+</head>
+<body>
+
+<!-- Title -->
+<h1>Window Page Information</h1>
+
+<!-- Content -->
+<div id="content">
+    <p>Window.innerHeight: <span id="innerHeight"></span></p>
+    <p>Window.innerWidth: <span id="innerWidth"></span></p>
+</div>
+
+<!-- JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to display Window information
+        window.windowFunction = function () {
+            document.getElementById('innerHeight').innerText = window.innerHeight;
+            document.getElementById('innerWidth').innerText = window.innerWidth;
+        };
+
+        // Call the windowFunction to populate the information
+        window.windowFunction();
+    });
+</script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
